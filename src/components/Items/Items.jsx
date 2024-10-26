@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Items.scss";
 
@@ -22,7 +23,11 @@ function Items() {
   return (
     <div>
       {items.map((item) => {
-        return <img src={item.image} key={item.id} />;
+        return (
+          <Link to={`/item/${item.id}`} key={item.id}>
+            <img src={item.image} />
+          </Link>
+        );
       })}
     </div>
   );
