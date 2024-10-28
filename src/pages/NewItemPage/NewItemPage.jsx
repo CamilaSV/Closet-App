@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import ItemForm from "/src/components/ItemForm/ItemForm";
 import Header from "/src/components/Header/Header";
 import axios from "axios";
@@ -8,7 +8,7 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function NewItemPage() {
   const [item, setItem] = useState({});
-  const formRef = useRef(null);
+
   const navigate = useNavigate();
 
   async function handleSubmit(formData) {
@@ -26,12 +26,7 @@ function NewItemPage() {
     <div>
       <Header />
       <h1>Add new item</h1>
-      <ItemForm
-        item={item}
-        setItem={setItem}
-        formRef={formRef}
-        handleSubmit={handleSubmit}
-      />
+      <ItemForm item={item} setItem={setItem} handleSubmit={handleSubmit} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-function ItemForm({ item, setItem, formRef, handleSubmit }) {
+function ItemForm({ item, setItem, handleSubmit }) {
   const [preview, setPreview] = useState(null);
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ function ItemForm({ item, setItem, formRef, handleSubmit }) {
 
   return (
     <div>
-      <form ref={formRef} encType="multipart/form-data" onSubmit={onSubmit}>
+      <form encType="multipart/form-data" onSubmit={onSubmit}>
         <input type="submit" value="SUBMIT" />
         <button onClick={() => navigate("/item")}>CANCEL</button>
 
