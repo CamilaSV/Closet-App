@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Items.scss";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-function Items() {
-  const [items, setItems] = useState([]);
-
+function Items({ items, setItems }) {
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -21,11 +19,17 @@ function Items() {
   }, []);
 
   return (
-    <div>
+    <div className="items">
       {items.map((item) => {
         return (
-          <Link to={`/item/${item.id}`} key={item.id}>
-            {item.image && <img src={`${BASE_URL}${item.image}`} alt="preview" />}
+          <Link to={`/item/${item.id}`} key={item.id} className="items__item">
+            {item.image && (
+              <img
+                src={`${BASE_URL}${item.image}`}
+                alt="preview"
+                className="items__img"
+              />
+            )}
           </Link>
         );
       })}
