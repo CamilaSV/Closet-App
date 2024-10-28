@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemForm from "/src/components/ItemForm/ItemForm";
+import Header from "/src/components/Header/Header";
 import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -23,6 +24,7 @@ function NewItemPage() {
 
   return (
     <div>
+      <Header />
       <h1>Add new item</h1>
       <ItemForm
         item={item}
