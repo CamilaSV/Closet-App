@@ -25,7 +25,7 @@ function Items() {
       {items.map((item) => {
         return (
           <Link to={`/item/${item.id}`} key={item.id}>
-            <img src={item.image} />
+            {item.image && <img src={`${BASE_URL}${item.image}`} alt="preview" />}
           </Link>
         );
       })}
