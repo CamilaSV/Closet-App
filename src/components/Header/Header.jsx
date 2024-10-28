@@ -23,10 +23,19 @@ function Header({ item }) {
       <h1 className="header__title">InCloset</h1>
       {location.pathname === "/" || location.pathname === "/item" ? (
         <Link to="/new-item">
-          <input type="button" value="+" />
+          <img
+            src="/src/assets/add-button.svg"
+            alt="add button"
+            className="header__button"
+          />
         </Link>
       ) : location.pathname !== "/new-item" ? (
-        <input type="button" value="DELETE" onClick={handleDelete} />
+        <img
+          src="/src/assets/delete-button.svg"
+          alt="delete button"
+          className="header__button"
+          onClick={handleDelete}
+        />
       ) : (
         ""
       )}
