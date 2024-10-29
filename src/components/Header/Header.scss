@@ -1,19 +1,32 @@
+@use "/src/styles/partials/_mixins.scss" as *;
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 1rem;
 
   &__title {
-    color: #000;
-    font-size: 2.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    margin: 1.75rem 0;
+    @include title;
   }
 
   &__button {
-    width: 40px;
-    height: 40px;
-    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 2.5rem;
+    height: 2.5rem;
+    @include shadow;
+  }
+
+  &__button:hover {
+    @include shadow-hover;
+  }
+
+  &__button:active {
+    @include shadow-active;
   }
 }
