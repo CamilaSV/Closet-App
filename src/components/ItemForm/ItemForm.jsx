@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./ItemForm.scss";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
@@ -36,9 +37,6 @@ function ItemForm({ item, setItem, handleSubmit }) {
     formData.append("color", item.color || "");
     formData.append("material", item.material || "");
     formData.append("pattern", item.pattern || "");
-    formData.append("style", item.style || "");
-    formData.append("fit", item.fit || "");
-    formData.append("brand", item.brand || "");
     formData.append("tags", item.tags || "");
     formData.append("notes", item.notes || "");
 
@@ -47,136 +45,122 @@ function ItemForm({ item, setItem, handleSubmit }) {
 
   return (
     <div>
-      <form encType="multipart/form-data" onSubmit={onSubmit}>
-        <input type="submit" value="SUBMIT" />
-        <button onClick={() => navigate("/item")}>CANCEL</button>
-
-        {preview && <img src={preview} alt="preview" />}
-
-        <input type="file" name="image" accept="image/*" onChange={getFile} />
-
-        <label>
-          Season:
+      <form encType="multipart/form-data" onSubmit={onSubmit} className="form">
+        <div className="form__buttons">
           <input
-            type="text"
-            name="season"
-            className="item--input"
-            value={item?.season || ""}
-            onChange={handleChange}
+            type="submit"
+            value="SUBMIT"
+            className="form__button form__button--submit"
           />
-        </label>
 
-        <label>
-          Category:
-          <input
-            type="text"
-            name="category"
-            className="item--input"
-            value={item?.category || ""}
-            onChange={handleChange}
-          />
-        </label>
+          <button
+            onClick={() => {
+              navigate(-1);
+              setItem([]);
+            }}
+            className="form__button form__button--cancel"
+          >
+            CANCEL
+          </button>
+        </div>
 
-        <label>
-          Color:
-          <input
-            type="text"
-            name="color"
-            className="item--input"
-            value={item?.color}
-            onChange={handleChange || ""}
-          />
-        </label>
+        <div className="form__main">
+          <div className="form__files">
+            {preview && (
+              <img src={preview} alt="preview" className="form__img" />
+            )}
 
-        <label>
-          Material:
-          <input
-            type="text"
-            name="material"
-            className="item--input"
-            value={item?.material || ""}
-            onChange={handleChange}
-          />
-        </label>
+            <div className="form__field">
+              <label className="form__label">PICTURE:</label>
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                onChange={getFile}
+                className="form__input"
+              />
+            </div>
+          </div>
 
-        <label>
-          Pattern:
-          <input
-            type="text"
-            name="pattern"
-            className="item--input"
-            value={item?.pattern || ""}
-            onChange={handleChange}
-          />
-        </label>
+          <div className="form__inputs">
+            <div className="form__field">
+              <label className="form__label">SEASON:</label>
+              <input
+                type="text"
+                name="season"
+                className="form__input"
+                value={item?.season || ""}
+                onChange={handleChange}
+              />
+            </div>
 
-        <label>
-          Style:
-          <input
-            type="text"
-            name="style"
-            className="item--input"
-            value={item?.style || ""}
-            onChange={handleChange}
-          />
-        </label>
+            <div className="form__field">
+              <label className="form__label">CATEGORY:</label>
+              <input
+                type="text"
+                name="category"
+                className="form__input"
+                value={item?.category || ""}
+                onChange={handleChange}
+              />
+            </div>
 
-        <label>
-          Fit:
-          <input
-            type="text"
-            name="fit"
-            className="item--input"
-            value={item?.fit || ""}
-            onChange={handleChange}
-          />
-        </label>
+            <div className="form__field">
+              <label className="form__label">COLOR:</label>
+              <input
+                type="text"
+                name="color"
+                className="form__input"
+                value={item?.color}
+                onChange={handleChange || ""}
+              />
+            </div>
 
-        <label>
-          Brand:
-          <input
-            type="text"
-            name="brand"
-            className="item--input"
-            value={item?.brand || ""}
-            onChange={handleChange}
-          />
-        </label>
+            <div className="form__field">
+              <label className="form__label">MATERIAL:</label>
+              <input
+                type="text"
+                name="material"
+                className="form__input"
+                value={item?.material || ""}
+                onChange={handleChange}
+              />
+            </div>
 
-        <label>
-          Tags:
-          <input
-            type="text"
-            name="tags"
-            className="item--input"
-            value={item?.tags || ""}
-            onChange={handleChange}
-          />
-        </label>
+            <div className="form__field">
+              <label className="form__label">PATTERN:</label>
+              <input
+                type="text"
+                name="pattern"
+                className="form__input"
+                value={item?.pattern || ""}
+                onChange={handleChange}
+              />
+            </div>
 
-        <label>
-          Notes:
-          <input
-            type="text"
-            name="notes"
-            className="item--input"
-            value={item?.notes || ""}
-            onChange={handleChange}
-          />
-        </label>
-        {/* <label>
-          Extra Images
-          <input
-            type="file"
-            name="extra_imgs"
-            accept="image/*,.pdf"
-            onChange={getFile}
-            multiple
-          />
-          {item?.extra_imgs?.map((img, i) => {
-            return <img src={img} key={i}></img>;
-          })}
-        </label> */}
+            <div className="form__field">
+              <label className="form__label">TAGS:</label>
+              <input
+                type="text"
+                name="tags"
+                className="form__input"
+                value={item?.tags || ""}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="form__field">
+              <label className="form__label">NOTES:</label>
+              <input
+                type="text"
+                name="notes"
+                className="form__input"
+                value={item?.notes || ""}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   );
