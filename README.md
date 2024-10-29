@@ -21,20 +21,15 @@ InCloset is designed to help you make the most of your wardrobe. Always remember
 ### Features
 
 - **Add Items:** Upload clothing images with automatic background removal. Add tags like color, type, origin (e.g., second-hand), weather suitability, and fit.
-  
 - **Edit and Delete Items:** Modify or remove clothing items as needed.
 
 - **Search and Sort Items:** Browse, search, and sort items by attributes such as type, color, or weather suitability.
 
-- **Create and Manage Outfits:** Group items into outfits, with the ability to create, view, update, and delete them.
+- **Create and Manage Outfits:** Group items into outfits, with the ability to create, view and delete them.
 
 - **Create Collections:** Organize outfits or items into collections, such as "To Try," "Favorites," "Packing List," or "Winter Essentials."
 
 - **Closet Analytics:** Get insights like closet breakdown, wear count, and least-worn items.
-
-- **Weather Integration:** View weather forecasts to choose weather-appropriate outfits.
-
-- **Authentication:** Create an account to save and access your closet from any device.
 
 ---
 
@@ -53,12 +48,14 @@ InCloset is designed to help you make the most of your wardrobe. Always remember
 - Server libraries:
   - knex
   - express
-- Authentication:
-  - Passport.js
 
 ---
 
 ## Future Implementations
+
+- **Authentication:** Create an account to save and access your closet from any device.
+
+- **Weather Integration:** View weather forecasts to choose weather-appropriate outfits.
 
 - **Track Outfits in a Calendar:** Track outfits worn on specific days via a calendar view to assist with planning.
 

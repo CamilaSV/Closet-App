@@ -1,0 +1,32 @@
+@use "/src/styles/partials/_mixins.scss" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+
+  &__title {
+    margin: 1.75rem 0;
+    @include title;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 2.5rem;
+    height: 2.5rem;
+    @include shadow;
+  }
+
+  &__button:hover {
+    @include shadow-hover;
+  }
+
+  &__button:active {
+    @include shadow-active;
+  }
+}
