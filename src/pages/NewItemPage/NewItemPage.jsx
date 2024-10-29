@@ -3,6 +3,7 @@ import { useState } from "react";
 import ItemForm from "/src/components/ItemForm/ItemForm";
 import Header from "/src/components/Header/Header";
 import axios from "axios";
+import "./NewItemPage.scss";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
@@ -25,7 +26,6 @@ function NewItemPage() {
   return (
     <div>
       <Header />
-      <h1>Add new item</h1>
       <ItemForm item={item} setItem={setItem} handleSubmit={handleSubmit} />
     </div>
   );
