@@ -19,15 +19,15 @@ function Items({ items, setItems }) {
   }, []);
 
   return (
-    <div className="items">
+    <div className="grid">
       {items.map((item) => {
         return (
-          <Link to={`/item/${item.id}`} key={item.id} className="items__item">
+          <Link to={`/item/${item.id}`} key={item.id} className="grid__item">
             {item.image && (
               <img
                 src={`${BASE_URL}${item.image}`}
                 alt="preview"
-                className="items__img"
+                className="grid__img"
               />
             )}
           </Link>
