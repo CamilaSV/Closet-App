@@ -1,7 +1,22 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   font-family: system-ui;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
-img {
-  width: 30%;
+a {
+  display: contents;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
 }
